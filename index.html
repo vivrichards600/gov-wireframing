@@ -1,83 +1,899 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>GOV Wireframing</title>
+
+    <!-- Le styles -->
+    <link href="css/bootstrap-combined.min.css" rel="stylesheet">
+    <link href="css/layoutit.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+		<script src="js/html5shiv.js"></script>
+	<![endif]-->
 
-    <title>Gov-wireframing by vivrichards600</title>
-  </head>
+    <!-- Fav and touch icons -->
+    <link rel="shortcut icon" href="img/favicon.png">
 
-  <body>
-    <header>
-      <div class="inner">
-        <h1>Gov-wireframing</h1>
-        <h2>A drag and drop tool to enable users to create a wireframe for a GOV service.</h2>
-        <a href="https://github.com/vivrichards600/gov-wireframing" class="button"><small>View project on</small>GitHub</a>
-      </div>
-    </header>
+    <script type="text/javascript" src="js/jquery-2.0.0.min.js"></script>
+    <!--[if lt IE 9]>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<![endif]-->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="js/jquery.htmlClean.js"></script>
+    <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
+    <script type="text/javascript" src="ckeditor/config.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+</head>
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+<body style="min-height: 660px; cursor: auto;" class="edit">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar" type="button"> <span class="icon-bar"></span>  <span class="icon-bar"></span>  <span class="icon-bar"></span> 
+                </button>
+                <div class="brand">
+                   GOVWireframing<span class="label">BETA</span>
+                </div>
+                <div class="nav-collapse collapse">
+                    <ul class="nav" id="menu-layoutit">
+                        <li class="divider-vertical"></li>
+                        <li>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+                            <div class="btn-group" data-toggle="buttons-radio">
+                                <button type="button" id="edit" class="btn btn-primary active"><i class="icon-edit icon-white"></i>Edit</button>
+                                <button type="button" class="btn btn-primary" id="devpreview" style="display:none"><i class="icon-eye-close icon-white"></i>Developer</button>
+                                <button type="button" class="btn btn-primary" id="sourcepreview"><i class="icon-eye-open icon-white"></i>Preview</button>
+                            </div>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-primary" data-target="#downloadModal" rel="/build/downloadModal" role="button" data-toggle="modal"><i class="icon-chevron-down icon-white"></i>Download</button>
+                                
+                                <button class="btn btn-primary" href="#clear" id="clear"><i class="icon-trash icon-white"></i>Clear</button>
+                            </div>
+                            <div class="btn-group">
+                                <button class="btn btn-primary" href="#undo" id="undo"><i class="icon-arrow-left icon-white"></i>Undo</button>
+                                <button class="btn btn-primary" href="#redo" id="redo"><i class="icon-arrow-right icon-white"></i>Redo</button>
+                            </div>
+                        </li>
+                    </ul>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-        </section>
-
-        <aside id="sidebar">
-          <a href="https://github.com/vivrichards600/gov-wireframing/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/vivrichards600/gov-wireframing/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
-
-          <p class="repo-owner"><a href="https://github.com/vivrichards600/gov-wireframing"></a> is maintained by <a href="https://github.com/vivrichards600">vivrichards600</a>.</p>
-
-          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
-      </div>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+        </div>
     </div>
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="">
+                <div class="sidebar-nav">
+                    <ul class="nav nav-list accordion-group">
+                        <li class="nav-header">
+                            
+                            <i class="icon-plus icon-white"></i> Grid System</li>
+                        <li style="display: list-item;" class="rows" id="estRows">
+                            <div class="lyrow ui-draggable"> <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>  <span class="drag label"><i class="icon-move"></i>drag</span>
+                                <div class="preview">
+                                    <input value="12" type="text">
+                                </div>
+                                <div class="view">
+                                    <div class="row-fluid clearfix">
+                                        <div class="span12 column"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lyrow ui-draggable"> <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>  <span class="drag label"><i class="icon-move"></i>drag</span>
+                                <div class="preview">
+                                    <input value="6 6" type="text">
+                                </div>
+                                <div class="view">
+                                    <div class="row-fluid clearfix">
+                                        <div class="span6 column"></div>
+                                        <div class="span6 column"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lyrow ui-draggable"> <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>  <span class="drag label"><i class="icon-move"></i>drag</span>
+                                <div class="preview">
+                                    <input value="8 4" type="text">
+                                </div>
+                                <div class="view">
+                                    <div class="row-fluid clearfix">
+                                        <div class="span8 column"></div>
+                                        <div class="span4 column"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lyrow ui-draggable"> <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>  <span class="drag label"><i class="icon-move"></i>drag</span>
+                                <div class="preview">
+                                    <input value="4 4 4" type="text">
+                                </div>
+                                <div class="view">
+                                    <div class="row-fluid clearfix">
+                                        <div class="span4 column"></div>
+                                        <div class="span4 column"></div>
+                                        <div class="span4 column"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lyrow ui-draggable"> <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>  <span class="drag label"><i class="icon-move"></i>drag</span>
+                                <div class="preview">
+                                    <input value="2 6 4" type="text">
+                                </div>
+                                <div class="view">
+                                    <div class="row-fluid clearfix">
+                                        <div class="span2 column"></div>
+                                        <div class="span6 column"></div>
+                                        <div class="span4 column"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-list accordion-group">
+                        <li class="nav-header"><i class="icon-plus icon-white"></i> BASE CSS
+                            
+                        </li>
+                        <li style="display: none;" class="boxes" id="elmBase">
+						        <div class="box box-element ui-draggable"> 
+									<a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>  
+									<span class="drag label"><i class="icon-move"></i>drag</span> 
+                                                            
+									<div class="preview">Header</div>
+									<div class="view">
+										<header role="banner" id="global-header">
+											<div class="header-wrapper">
+												<div class="header-global">
+													<div class="header-logo">
+														<a href="https://www.gov.uk/" title="Go to the GOV.UK homepage" id="logo" class="content">
+														<img src="https://www.taxdisc.service.gov.uk/Assets/Images/gov.uk_logotype_crown.png" alt="">
+														GOV.UK </a>
+													</div>
+												</div>
+											</div>
+										</header>
+									</div>
+                            </div>
+							
+							
+							<div class="box box-element ui-draggable"> 
+									<a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>  
+									<span class="drag label"><i class="icon-move"></i>drag</span> 
+                                                            
+									<div class="preview">Beta bar</div>
+									<div class="view remove-view">
+										<div id="phase-notice">
+											<p>
+												<strong>BETA:</strong> This is a new service - your <a href="mailto:service.feedback@dvla.gsi.gov.uk?subject=BETA%20Service">
+													feedback</a> will help us to improve it</p>
+										</div>
+									</div>
+                            </div>
+							
+							 <div class="lyrow ui-draggable"> <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>  <span class="drag label"><i class="icon-move"></i>drag</span>
+                                <div class="preview">
+                                    <input value="Content container" type="text">
+                                </div>
+                                <div class="view content-container">
+                                    <div class="row-fluid clearfix">
+                                        <div class="column"></div>
+                                    </div>
+                                </div>
+                            </div>
+							
+							
+							<div class="box box-element ui-draggable"> 
+									<a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>  
+									<span class="drag label"><i class="icon-move"></i>drag</span> 
+                                                            
+									<div class="preview">Footer</div>
+									<div class="view remove-view">
+										
+										<footer class="group js-footer" id="footer" role="contentinfo">
+										
+										<div class="footer-wrapper">
+        <div class="footer-meta">
+          <div class="footer-meta-inner">
 
-  
-  </body>
+             <h2 class="visuallyhidden">Support Links</h2>.
+			 <ul>
+			    <li><a href="/csr/index.cgi?pageclass=StandardMessage&amp;display=tandc">Terms and Conditions</a></li>
+			    <li><a href="/csr/index.cgi?pageclass=StandardMessage&amp;display=privacy">Privacy Policy</a></li>
+			    <li><a href="/csr/index.cgi?pageclass=StandardMessage&amp;display=dp">Data Protection</a></li>
+			    <li><a href="/csr/index.cgi?pageclass=StandardMessage&amp;display=accessibility">Accessibility</a></li>
+			    <li><a href="/csr/index.cgi?pageclass=StandardMessage&amp;display=cookies">Cookies</a></li>
+<li><a href="http://www.wcn.co.uk">Built by WCN</a></li>
+			 </ul>
+
+            <div class="open-government-licence">
+              <h2><a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2"><img src="https://static.civilservicejobs.service.gov.uk/csr/assets/images/open-government-licence_2x.png" alt="OGL"></a></h2>
+              <p>All content is available under the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government 
+Licence v2.0</a>, except where otherwise stated</p>
+            </div>
+          </div>
+
+          <div class="copyright">
+            <a href="http://www.nationalarchives.gov.uk/information-management/our-services/crown-copyright.htm">© Crown copyright</a>
+          </div>
+        </div>
+      </div>
+										</footer>
+										
+									</div>	
+								</div>
+                           
+							
+							
+							
+						</li>
+						
+					</ul>
+					 <ul class="nav nav-list accordion-group">
+						<li class="nav-header"><i class="icon-plus icon-white"></i> Components
+                           
+                        </li>
+						<li style="display: none;" class="boxes" id="elmBase">
+						    <div class="box box-element ui-draggable"> 
+								<a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>  
+								<span class="drag label"><i class="icon-move"></i>drag</span> 
+														
+								<div class="preview">Title</div>
+								<div class="view" contenteditable="true">
+									<h1>Service title</h1>
+								</div>
+                            </div>
+							<div class="box box-element ui-draggable"> 
+								<a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>  
+								<span class="drag label"><i class="icon-move"></i>drag</span> 
+														
+								<div class="preview">Sub title</div>
+								<div class="view" contenteditable="true">
+									<h2>Service sub-title</h2>
+								</div>
+                            </div>
+							<div class="box box-element ui-draggable"> 
+								<a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>  
+								<span class="drag label"><i class="icon-move"></i>drag</span> 
+														
+								<div class="preview">Paragraph</div>
+								<div class="view" contenteditable="true">
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut purus urna, congue nec vestibulum quis, accumsan eu libero. Aliquam erat volutpat. Duis gravida dapibus lacus. Praesent eget metus congue tellus aliquet placerat ac non elit. Curabitur accumsan ex sed mi condimentum, et dignissim nibh ornare. Sed at sagittis lectus. Maecenas id pulvinar eros, quis posuere diam. Aliquam lacinia ultrices lorem, et mollis ante pulvinar sed.</p>
+								</div>
+                            </div>
+							
+							
+							
+							<div class="box box-element ui-draggable"> <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>  <span class="drag label"><i class="icon-move"></i>drag</span>  <span class="configuration"> <span class="btn-group"> <a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="#">Style <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="active"><a href="#" rel="">Default</a>
+                                    </li>
+                                    <li class=""><a href="#" rel="btn-primary">Primary</a>
+                                    </li>
+                                    <li class=""><a href="#" rel="btn-info">Information</a>
+                                    </li>
+                                    <li class=""><a href="#" rel="btn-success">Success</a>
+                                    </li>
+                                    <li class=""><a href="#" rel="btn-warning">Remind</a>
+                                    </li>
+                                    <li class=""><a href="#" rel="btn-danger">Danger</a>
+                                    </li>
+                                    <li class=""><a href="#" rel="btn-inverse">Reverse</a>
+                                    </li>
+                                    <li class=""><a href="#" rel="btn-link">Links</a>
+                                    </li>
+                                </ul>
+                                </span> <span class="btn-group"> <a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="#">Size <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class=""><a href="#" rel="btn-large">Large</a>
+                                    </li>
+                                    <li class="active"><a href="#" rel="">Medium</a>
+                                    </li>
+                                    <li class=""><a href="#" rel="btn-small">Small</a>
+                                    </li>
+                                    <li class=""><a href="#" rel="btn-mini">X-Small</a>
+                                    </li>
+                                </ul>
+                                </span> <a class="btn btn-mini" href="#" rel="btn-block">Banner</a>  <a class="btn btn-mini" href="#" rel="disabled">Disable</a> 
+                                </span>
+                                <div class="preview">Button</div>
+                                <div class="view">
+                                    <button class="btn" type="button" contenteditable="true">Button</button>
+                                </div>
+                            </div>
+							
+							
+						</li>		
+						
+					</ul>
+							<style>
+							
+							/**
+							* GOV UK STYLES
+							**/
+							
+							
+							/**
+							* HEADER BAR
+							**/
+							#global-header {
+							background-color: #0b0c0c;
+							width: 100%;
+							}
+							#global-header .header-wrapper {
+							max-width: 990px;
+							margin: 0 auto;
+							padding: 0.5em 15px;
+							height:40px;
+							}
+
+							.header-wrapper {
+							padding: 0.5em 15px;
+							}
+
+							#header-global {
+							content: "";
+							display: block;
+							clear: both;
+							}
+
+							header {
+							margin: 0;
+							padding: 0;
+							vertical-align: baseline;
+							}
+							#global-header #logo {
+							float: left;
+							position: relative;
+							top: 1px;
+							height: 30px;
+							overflow: visible;
+							vertical-align: baseline;
+							color: white;
+							font-weight: bold;
+							font-size: 30px;
+							line-height: 1em;
+							text-decoration: none;
+							text-rendering: optimizeLegibility;
+							margin-bottom: -1px;
+							padding-bottom: 1px;
+							}
+
+							#global-header #logo img {
+							position: relative;
+							top: -3px;
+							width: 35px;
+							height: 31px;
+							padding-right: 8px;
+							float: left;
+							display: inline;
+							line-height: inherit;
+							border: none;
+							}
+
+							#global-header .header-wrapper .header-global .header-logo {
+							margin: 5px 0 2px 20px;
+							}
+
+							/**
+							* BETA BAR
+							**/
+							#phase-notice {
+							background: #f47738;
+							}
+							
+							#phase-notice p {
+							margin: 0px auto;
+							padding: 8px 32px;
+							max-width: 940px;
+							color: black;
+							}
+							
+							/**
+							* CONTENT CONTAINER
+							**/
+							
+							.content-container {
+							margin: 0px auto;
+							padding: 8px 32px;
+							max-width: 940px;
+							min-height:50px;
+							margin-bottom:20px;
+							}
+							
+							/**
+							* Footer
+							**/
+							
+							@media (max-width: 640px) {
+    #global-cookie-message p {
+    font-size: 14px;
+    line-height: 1.14286;
+}
+}#footer {
+    background-color: #dee0e2;
+    border-top: 1px solid #a1acb2;
+}
+#footer .footer-wrapper {
+    margin: 0 auto;
+    width: auto;
+    max-width: 1020px;
+    padding-top: 20px;
+    background-color: #dee0e2;
+    margin: 0 auto;
+}
+@media (min-width: 641px) {
+    #footer .footer-wrapper {
+    padding-top: 60px;
+}
+}#footer a {
+    color: #454a4c;
+}
+#footer a:hover {
+    color: #171819;
+}
+#footer h2 {
+    font-family: "nta",  Arial,  sans-serif;
+    font-size: 24px;
+    line-height: 1.25;
+    font-weight: 400;
+    text-transform: none;
+    font-weight: bold;
+    color: #171819;
+    margin: 0;
+}
+@media (max-width: 640px) {
+    #footer h2 {
+    font-size: 18px;
+    line-height: 1.2;
+}
+}#footer h2 a {
+    color: inherit;
+}
+#footer .footer-meta {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 60px;
+    clear: both;
+    font-size: 0;
+    color: #454a4c;
+}
+@media (min-width: 641px) {
+    #footer .footer-meta {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+}#footer .footer-meta .footer-meta-inner {
+    display: inline-block;
+    vertical-align: bottom;
+    width: 100%}
+@media (min-width: 641px) {
+    #footer .footer-meta .footer-meta-inner {
+    width: 75%}
+}#footer .footer-meta .footer-meta-inner ul {
+    font-family: "nta",  Arial,  sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 400;
+    text-transform: none;
+    display: inline-block;
+    list-style: none;
+    margin: 0 0 1.5em 0;
+    padding: 0;
+}
+@media (max-width: 640px) {
+    #footer .footer-meta .footer-meta-inner ul {
+    font-size: 14px;
+    line-height: 1.5;
+}
+}@media (min-width: 641px) {
+    #footer .footer-meta .footer-meta-inner ul {
+    margin: 0 0 1em 0;
+}
+}#footer .footer-meta .footer-meta-inner ul li {
+    display: inline-block;
+    margin: 0 15px 0 0;
+}
+#footer .footer-meta .footer-meta-inner .open-government-licence {
+    clear: left;
+    position: relative;
+}
+@media (min-width: 641px) {
+    #footer .footer-meta .footer-meta-inner .open-government-licence {
+    padding-left: 53px;
+}
+}#footer .footer-meta .footer-meta-inner .open-government-licence h2 {
+    margin-bottom: 1em;
+}
+@media (min-width: 641px) {
+    #footer .footer-meta .footer-meta-inner .open-government-licence h2 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 41px;
+    height: 100%}
+}#footer .footer-meta .footer-meta-inner .open-government-licence h2 a {
+    display: block;
+    width: 41px;
+    height: 17px;
+    overflow: hidden;
+    text-indent: -999em;
+    background: url(https://assets.digital.cabinet-office.gov.uk/static/images/open-government-licence-974ebd75112cb480aae1a55ae4593c67.png) 0 0 no-repeat;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2),  only screen and (min--moz-device-pixel-ratio: 2),  only screen and (-o-min-device-pixel-ratio: 20 / 10),  only screen and (min-device-pixel-ratio: 2),  only screen and (min-resolution: 192dpi),  only screen and (min-resolution: 2dppx) {
+    #footer .footer-meta .footer-meta-inner .open-government-licence h2 a {
+    background-image: url(https://assets.digital.cabinet-office.gov.uk/static/images/open-government-licence_2x-d273d7eca3045d3b710a863d9bfc0b33.png);
+    background-size: 41px 17px;
+}
+}#footer .footer-meta .footer-meta-inner .open-government-licence p {
+    font-family: "nta",  Arial,  sans-serif;
+    font-size: 16px;
+    line-height: 1.25;
+    font-weight: 400;
+    text-transform: none;
+    margin: 0;
+    padding-top: 0.1em;
+}
+@media (max-width: 640px) {
+    #footer .footer-meta .footer-meta-inner .open-government-licence p {
+    font-size: 14px;
+    line-height: 1.14286;
+}
+}#footer .footer-meta .copyright {
+    font-family: "nta",  Arial,  sans-serif;
+    font-size: 16px;
+    line-height: 1.25;
+    font-weight: 400;
+    text-transform: none;
+    margin: 30px 0 0 0;
+    width: 100%;
+    display: block;
+}
+@media (max-width: 640px) {
+    #footer .footer-meta .copyright {
+    font-size: 14px;
+    line-height: 1.14286;
+}
+}@media (min-width: 641px) {
+    #footer .footer-meta .copyright {
+    display: inline-block;
+    text-align: inherit;
+    width: 25%;
+    padding-top: 15px;
+    margin-top: 0;
+}
+}#footer .footer-meta .copyright a {
+    display: block;
+    background-image: url(https://assets.digital.cabinet-office.gov.uk/static/images/govuk-crest-795cd6afb205d81a4267e100e11debe1.png);
+    background-repeat: no-repeat;
+    background-position: 50% 0%;
+    text-align: center;
+    text-decoration: none;
+    padding: 115px 0 0 0;
+}
+@media (min-width: 641px) {
+    #footer .footer-meta .copyright a {
+    background-position: 100% 0%}
+}@media only screen and (-webkit-min-device-pixel-ratio: 2),  only screen and (min--moz-device-pixel-ratio: 2),  only screen and (-o-min-device-pixel-ratio: 20 / 10),  only screen and (min-device-pixel-ratio: 2),  only screen and (min-resolution: 192dpi),  only screen and (min-resolution: 2dppx) {
+    #footer .footer-meta .copyright a {
+    background-image: url(https://assets.digital.cabinet-office.gov.uk/static/images/govuk-crest-2x-1da912cf347870372d1245bc44ecb4a7.png);
+    background-size: 125px 102px;
+}
+}@media (min-width: 641px) {
+    #footer .footer-meta .copyright a {
+    text-align: right;
+}
+}
+#footer .footer-categories .footer-explore, #footer .footer-categories .footer-inside-government {
+float: left;
+width: 66.66%;
+padding-bottom: 60px;
+}
+#footer .footer-categories .footer-inside-government {
+float: left;
+width: 33.33%;
+}
+#footer .footer-categories hr {
+clear: both;
+margin: 0 15px 30px;
+border: 1px solid #bfc1c3;
+border-width: 1px 0 0 0;
+}
+
+.visuallyhidden {
+position: absolute;
+left: -9999em;
+}
+
+#footer a {
+color: #454a4c;
+text-decoration: underline;
+cursor: auto;
+}
+}
+
+a:visited {
+color: #4c2c92;
+}
+
+
+a {
+-webkit-tap-highlight-color: rgba(0,0,0,0.3);
+}
+
+#footer .footer-categories ul {
+font-family: "nta",Arial,sans-serif;
+font-size: 16px;
+line-height: 1.25;
+font-weight: 300;
+text-transform: none;
+list-style: none;
+padding: 10px 0 0;
+margin: 0 15px 30px;
+}
+							
+							
+							
+							/**
+							* Components
+							**/
+							h1 {
+							font-family: "nta",Arial,sans-serif;
+font-size: 48px;
+line-height: 1.04167;
+font-weight: 400;
+text-transform: none;
+font-weight: 700;
+color: #0b0c0c;
+padding-top: 0.7rem;
+padding-bottom: 1.3rem;
+margin-bottom: -40px;
+}
+
+h2 {
+margin: 0;
+color: #6f777b;
+font-family: "nta",Arial,sans-serif;
+font-size: 24px;
+line-height: 1.25;
+font-weight: 400;
+text-transform: none;
+}
+
+p {
+font-family: "nta", Arial, sans-serif;
+font-size: 19px;
+line-height: 1.31579;
+font-weight: 400;
+text-transform: none;
+}
+
+/**
+* MISC
+**/
+.remove-view {
+margin-top:-30px;
+}
+							
+</style>
+					
+                      
+                 
+                 
+                       
+                     
+                    </ul>
+                </div>
+            </div>
+            <!--/span-->
+            <div class="demo ui-sortable" style="min-height: 304px; ">
+
+                <div class="lyrow">
+                    <div class="preview">9 3</div>
+                    <div class="view">
+                      <div class="lyrow ui-draggable" style="display: block;"> <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>  <span class="drag label"><i class="icon-move"></i>drag</span>
+                                <div class="preview">
+                                    <input value="12" type="text">
+                                </div>
+                                <div class="view">
+                                    <div class="row-fluid clearfix">
+                                        <div class="span12 column ui-sortable"><div class="box box-element ui-draggable" style="display: block;"> 
+									<a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>  
+									<span class="drag label"><i class="icon-move"></i>drag</span> 
+                                                            
+									<div class="preview">Header</div>
+									<div class="view">
+										<header role="banner" id="global-header">
+											<div class="header-wrapper">
+												<div class="header-global">
+													<div class="header-logo">
+														<a href="https://www.gov.uk/" title="Go to the GOV.UK homepage" id="logo" class="content">
+														<img src="https://www.taxdisc.service.gov.uk/Assets/Images/gov.uk_logotype_crown.png" alt="">
+														GOV.UK </a>
+													</div>
+												</div>
+											</div>
+										</header>
+									</div>
+                            </div><div class="box box-element ui-draggable" style="display: block;"> 
+									<a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>  
+									<span class="drag label"><i class="icon-move"></i>drag</span> 
+                                                            
+									<div class="preview">Beta bar</div>
+									<div class="view remove-view">
+										<div id="phase-notice">
+											<p>
+												<strong>BETA:</strong> This is a new service - your <a href="mailto:service.feedback@dvla.gsi.gov.uk?subject=BETA%20Service">
+													feedback</a> will help us to improve it</p>
+										</div>
+									</div>
+                            </div><div class="lyrow ui-draggable" style="display: block;"> <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>  <span class="drag label"><i class="icon-move"></i>drag</span>
+                                <div class="preview">
+                                    <input value="Content container" type="text">
+                                </div>
+                                <div class="view content-container">
+                                    <div class="row-fluid clearfix">
+                                        <div class="column ui-sortable"><div class="box box-element ui-draggable" style="display: block;"> 
+								<a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>  
+								<span class="drag label"><i class="icon-move"></i>drag</span> 
+														
+								<div class="preview">Title</div>
+								<div class="view" contenteditable="true">
+									<h1>Service title</h1>
+								</div>
+                            </div><div class="box box-element ui-draggable" style="display: block;"> 
+								<a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>  
+								<span class="drag label"><i class="icon-move"></i>drag</span> 
+														
+								<div class="preview">Sub title</div>
+								<div class="view" contenteditable="true">
+									<h2>Service sub-title</h2>
+								</div>
+                            </div><div class="box box-element ui-draggable" style="display: block;"> 
+								<a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>  
+								<span class="drag label"><i class="icon-move"></i>drag</span> 
+														
+								<div class="preview">Paragraph</div>
+								<div class="view" contenteditable="true">
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut purus urna, congue nec vestibulum quis, accumsan eu libero. Aliquam erat volutpat. Duis gravida dapibus lacus. Praesent eget metus congue tellus aliquet placerat ac non elit. Curabitur accumsan ex sed mi condimentum, et dignissim nibh ornare. Sed at sagittis lectus. Maecenas id pulvinar eros, quis posuere diam. Aliquam lacinia ultrices lorem, et mollis ante pulvinar sed.</p>
+								</div>
+                            </div><div class="box box-element ui-draggable" style="display: block; position: relative; opacity: 1; z-index: 0;"> <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>  <span class="drag label"><i class="icon-move"></i>drag</span>  <span class="configuration"> <span class="btn-group"> <a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="#">Style <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class=""><a href="#" rel="">Default</a>
+                                    </li>
+                                    <li class="active"><a href="#" rel="btn-primary">Primary</a>
+                                    </li>
+                                    <li class=""><a href="#" rel="btn-info">Information</a>
+                                    </li>
+                                    <li class=""><a href="#" rel="btn-success">Success</a>
+                                    </li>
+                                    <li class=""><a href="#" rel="btn-warning">Remind</a>
+                                    </li>
+                                    <li class=""><a href="#" rel="btn-danger">Danger</a>
+                                    </li>
+                                    <li class=""><a href="#" rel="btn-inverse">Reverse</a>
+                                    </li>
+                                    <li class=""><a href="#" rel="btn-link">Links</a>
+                                    </li>
+                                </ul>
+                                </span> <span class="btn-group"> <a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="#">Size <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="active"><a href="#" rel="btn-large">Large</a>
+                                    </li>
+                                    <li class=""><a href="#" rel="">Medium</a>
+                                    </li>
+                                    <li class=""><a href="#" rel="btn-small">Small</a>
+                                    </li>
+                                    <li class=""><a href="#" rel="btn-mini">X-Small</a>
+                                    </li>
+                                </ul>
+                                </span> <a class="btn btn-mini" href="#" rel="btn-block">Banner</a>  <a class="btn btn-mini" href="#" rel="disabled">Disable</a> 
+                                </span>
+                                <div class="preview">Button</div>
+                                <div class="view">
+                                    <button class="btn btn-large btn-primary" type="button" contenteditable="true">Start service</button>
+                                </div>
+                            </div></div>
+                                    </div>
+                                </div>
+                            </div><div class="box box-element ui-draggable" style="display: block;"> 
+									<a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>  
+									<span class="drag label"><i class="icon-move"></i>drag</span> 
+                                                            
+									<div class="preview">Footer</div>
+									<div class="view remove-view">
+										
+										<footer class="group js-footer" id="footer" role="contentinfo">
+										
+										<div class="footer-wrapper">
+        <div class="footer-meta">
+          <div class="footer-meta-inner">
+
+             <h2 class="visuallyhidden">Support Links</h2>.
+			 <ul>
+			    <li><a href="/csr/index.cgi?pageclass=StandardMessage&amp;display=tandc">Terms and Conditions</a></li>
+			    <li><a href="/csr/index.cgi?pageclass=StandardMessage&amp;display=privacy">Privacy Policy</a></li>
+			    <li><a href="/csr/index.cgi?pageclass=StandardMessage&amp;display=dp">Data Protection</a></li>
+			    <li><a href="/csr/index.cgi?pageclass=StandardMessage&amp;display=accessibility">Accessibility</a></li>
+			    <li><a href="/csr/index.cgi?pageclass=StandardMessage&amp;display=cookies">Cookies</a></li>
+<li><a href="http://www.wcn.co.uk">Built by WCN</a></li>
+			 </ul>
+
+            <div class="open-government-licence">
+              <h2><a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2"><img src="https://static.civilservicejobs.service.gov.uk/csr/assets/images/open-government-licence_2x.png" alt="OGL"></a></h2>
+              <p>All content is available under the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government 
+Licence v2.0</a>, except where otherwise stated</p>
+            </div>
+          </div>
+
+          <div class="copyright">
+            <a href="http://www.nationalarchives.gov.uk/information-management/our-services/crown-copyright.htm">© Crown copyright</a>
+          </div>
+        </div>
+      </div>
+										</footer>
+										
+									</div>	
+								</div></div>
+                                    </div>
+                                </div>
+                            </div>  
+                    </div>
+                </div>
+
+
+
+            </div>
+            <!-- end demo -->
+            <!--/span-->
+            <div id="download-layout">
+                <div class="container-fluid"></div>
+            </div>
+        </div>
+        <!--/row-->
+    </div>
+    <!--/.fluid-container-->
+    <div class="modal hide fade" role="dialog" id="editorModal">
+        <div class="modal-header"> <a class="close" data-dismiss="modal">×</a>
+            <h3>Editing</h3>
+        </div>
+        <div class="modal-body">
+            <p>
+                <textarea id="contenteditor"></textarea>
+            </p>
+        </div>
+        <div class="modal-footer"> <a id="savecontent" class="btn btn-primary" data-dismiss="modal">Save</a>  <a class="btn" data-dismiss="modal">Exit</a> 
+        </div>
+    </div>
+    <div class="modal hide fade" role="dialog" id="downloadModal">
+        <div class="modal-header"> <a class="close" data-dismiss="modal">×</a>
+            <h3>Download</h3>
+        </div>
+        <div class="modal-body">
+            <p>You can copy and paste the code into your project.</p>
+            <div class="btn-group">
+                <button type="button" id="fluidPage" class="active btn btn-info"><i class="icon-fullscreen icon-white"></i> Fluid Width</button>
+                <button type="button" class="btn btn-info" id="fixedPage"><i class="icon-screenshot icon-white"></i>Fixed Width</button>
+            </div>
+            <br>
+            <br>
+            <p>
+                <textarea></textarea>
+            </p>
+        </div>
+        <div class="modal-footer"> <a class="btn" data-dismiss="modal">Exit</a> 
+        </div>
+    </div>
+    
+	
+</body>
+
 </html>
