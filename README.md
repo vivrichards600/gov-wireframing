@@ -18,8 +18,11 @@ This tool is still being worked on there are currently only a few elements avail
 * Button
 
 All elements need to meet the [GOV UK elements guide lines](http://govuk-elements.herokuapp.com/#guide-typography).
-  
+
+## Demo
+
+Try the current GitHub version of Gov Wireframing online [GOV Wireframing](http://vivrichards600.github.io/gov-wireframing/).
  
-## Credits
+### Credits
 
 This tool is based on [LayoutIt](http://www.layoutit.com/)
