@@ -11,9 +11,10 @@ This tool is still being worked on there are currently only a few elements avail
 * Grid Layouts
 * GOV Header
 * GOV Footer
+* Alpha Bar
 * Beta Bar
-* H1
-* H2
+* H1 (Title)
+* H2 (Sub title)
 * Paragraph
 * Button
 
