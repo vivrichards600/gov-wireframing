@@ -18,7 +18,7 @@ This tool is still being worked on there are currently only a few elements avail
 * Paragraph
 * Button
 
-All elements need to meet the [GOV UK elements guide lines](http://govuk-elements.herokuapp.com/#guide-typography).
+All GOV Wireframing elements will need to meet the [GOV UK elements guide lines](http://govuk-elements.herokuapp.com/) but do not currently meet this standard though they may appear to be similar styles *.
 
 ## Demo
 
